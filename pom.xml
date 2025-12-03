@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.spandana</groupId>
+    <artifactId>spandana-flink</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>Flink Email Counter</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <flink.version>1.20.3</flink.version> <!-- ✅ Upgraded -->
+        <flink.es8.connector.version>3.1.0-1.20</flink.es8.connector.version> <!-- ✅ ES8 connector -->
+        <target.java.version>11</target.java.version>
+        <log4j.version>2.24.3</log4j.version>
+    </properties>
+
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central</name>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
+<dependencies>
+<!-- ✅ Flink 1.20 core -->
+<dependency>
+    <groupId>org.apache.flink</groupId>
+    <artifactId>flink-streaming-java</artifactId>
+    <version>${flink.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.flink</groupId>
+    <artifactId>flink-clients</artifactId>
+    <version>${flink.version}</version>
+</dependency>
+
+
+<!-- ✅ Elasticsearch 8 connector with exclusions to avoid classloader conflicts -->
+<dependency>
+    <groupId>org.apache.flink</groupId>
+    <artifactId>flink-connector-elasticsearch8</artifactId>
+    <version>${flink.es8.connector.version}</version>
+    <exclusions>
+        <exclusion>
+            <groupId>com.esotericsoftware.kryo</groupId>
+            <artifactId>kryo</artifactId>
+        </exclusion>
+        <exclusion>
+            <groupId>org.objenesis</groupId>
+            <artifactId>objenesis</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+
+<!-- ✅ AWS SDK v2 for SQS and S3 -->
+<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>sqs</artifactId>
+    <version>2.25.35</version>
+</dependency>
+<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>s3</artifactId>
+    <version>2.25.35</version>
+</dependency>
+
+<!-- ✅ Jackson for JSON parsing -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.17.2</version>
+</dependency>
+
+<!-- ✅ Logging with Log4j -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
+    <version>${log4j.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>${log4j.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>${log4j.version}</version>
+</dependency>
+
+<!-- ✅ Jakarta Mail -->
+<dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>jakarta.mail</artifactId>
+    <version>2.0.1</version>
+</dependency>
+
+<!-- ✅ SnakeYAML -->
+<dependency>
+    <groupId>org.yaml</groupId>
+    <artifactId>snakeyaml</artifactId>
+    <version>2.2</version>
+</dependency>
+
+<!-- ✅ zstd-jni -->
+<dependency>
+    <groupId>com.github.luben</groupId>
+    <artifactId>zstd-jni</artifactId>
+    <version>1.5.5-4</version>
+</dependency>
+</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <release>11</release> <!-- ✅ Fix warning -->
+                </configuration>
+            </plugin>
+
+            <!-- ✅ Shade plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                        <!-- Exclude Kryo and Objenesis to avoid classloader conflicts -->
+                                        <exclude>com/esotericsoftware/kryo/**</exclude>
+                                        <exclude>org/objenesis/**</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.spandana.spandana_flink.EntryMainJob</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

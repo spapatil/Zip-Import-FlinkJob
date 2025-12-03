@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack-flink
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3,sqs
+      - DEBUG=1
+      - DATA_DIR=/var/lib/localstack
+      - DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+    volumes:
+      - "./init-scripts:/etc/localstack/init/ready.d"
+
+  jobmanager:
+    image: flink:1.20.3-java11
+    ports:
+      - "8081:8081"
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+      - ELASTICSEARCH_API_KEY=${ELASTICSEARCH_API_KEY}
+    command: jobmanager
+
+  taskmanager:
+    image: flink:1.20.3-java11
+    depends_on:
+      - jobmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+      - ELASTICSEARCH_API_KEY=${ELASTICSEARCH_API_KEY}
+      - TASK_MANAGER_NUMBER_OF_TASK_SLOTS=8
+    command: taskmanager

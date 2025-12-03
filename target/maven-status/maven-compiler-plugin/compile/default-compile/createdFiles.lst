@@ -1,0 +1,9 @@
+com/spandana/spandana_flink/SqsBatchSource.class
+com/spandana/spandana_flink/SimpleSqsMessage.class
+com/spandana/spandana_flink/EmailProcessor.class
+com/spandana/spandana_flink/ZipImportJob.class
+com/spandana/spandana_flink/EntryMainJob$1.class
+com/spandana/spandana_flink/ConfigLoader.class
+com/spandana/spandana_flink/AwsConfig.class
+com/spandana/spandana_flink/EntryMainJob$1ElasticsearchWithDLQAsyncFunction.class
+com/spandana/spandana_flink/EntryMainJob.class

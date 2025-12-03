@@ -1,0 +1,20 @@
+jobName: ""
+
+# AWS Configuration
+queueUrl: ""
+deadLetterQueueUrl: ""
+s3Endpoint: ""
+sqsEndpoint: ""
+region: ""
+awsUsername: ""
+awsPassword: ""
+
+# Buckets
+sourceBucket: ""
+tenantId: ""
+
+# Elasticsearch Configuration
+esHost: ""
+esPort: 9200
+esScheme: ""
+esApiKey: ""
