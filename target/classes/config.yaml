@@ -1,20 +1,20 @@
-jobName: ""
+jobName: "Flink S3 Email Processor Job"
 
 # AWS Configuration
-queueUrl: ""
-deadLetterQueueUrl: ""
-s3Endpoint: ""
-sqsEndpoint: ""
-region: ""
-awsUsername: ""
-awsPassword: ""
+queueUrl: "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/my-queue"
+deadLetterQueueUrl: "http://sqs.us-east-1.localhost.localstack.cloud:4566/000000000000/dead-letter-queue"
+s3Endpoint: "http://localstack:4566"
+sqsEndpoint: "http://localstack:4566"
+region: "us-east-1"
+awsUsername: "test"
+awsPassword: "test"
 
 # Buckets
-sourceBucket: ""
-tenantId: ""
+sourceBucket: "my-bucket"
+tenantId: "bma_2b6e10f1-1cd2-436f-8a2c-63121e80a1ed"
 
 # Elasticsearch Configuration
-esHost: ""
+esHost: "search-1a.qa-ue2.bcas.cudaops.com"
 esPort: 9200
-esScheme: ""
-esApiKey: ""
+esScheme: "http"
+esApiKey: ${ELASTICSEARCH_API_KEY}
