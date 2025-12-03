@@ -1,828 +1,0 @@
-2025-12-02T11:16:59.916Z [INFO] Initializing project configuration...
-2025-12-02T11:16:59.917Z [INFO] Project /Users/spapatil/Desktop/Officework/spandana-flink is a maven project, try to get java version from pom.xml
-2025-12-02T11:16:59.919Z [INFO] Project java version: 11
-2025-12-02T11:16:59.919Z [INFO] Maven project detected.
-2025-12-02T11:16:59.919Z [INFO] Build tool type: mvn
-2025-12-02T11:16:59.950Z [ERROR] JDK is not provided or detected for Java 11.
-2025-12-02T11:17:35.625Z [INFO] [Environment] Running command (Java 11): java -version
-openjdk version "11.0.28" 2025-07-15 LTS
-OpenJDK Runtime Environment Microsoft-11913453 (build 11.0.28+6-LTS)
-OpenJDK 64-Bit Server VM Microsoft-11913453 (build 11.0.28+6-LTS, mixed mode)
-2025-12-02T11:17:37.064Z [INFO] [JdkEnvironment] Got real Java version: 11.0.28
-2025-12-02T11:17:37.064Z [INFO] JDK: {
-  "name": "java",
-  "path": "/Users/spapatil/.jdk/jdk-11.0.28/jdk-11.0.28+6/Contents/Home/bin",
-  "version": "11"
-}
-2025-12-02T11:17:37.070Z [INFO] [Environment] Running command (Java 11): mvn --version
-Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
-Maven home: /opt/homebrew/Cellar/maven/3.9.11/libexec
-Java version: 11.0.28, vendor: Microsoft, runtime: /Users/spapatil/.jdk/jdk-11.0.28/jdk-11.0.28+6/Contents/Home
-Default locale: en_US, platform encoding: UTF-8
-OS name: "mac os x", version: "26.1", arch: "aarch64", family: "mac"
-2025-12-02T11:17:37.781Z [INFO] Real build tool version: 3.9.11
-2025-12-02T11:17:37.781Z [INFO] Build tool: {
-  "name": "mvn",
-  "path": "/opt/homebrew/Cellar/maven/3.9.11/bin",
-  "version": "3.9.11"
-}
-2025-12-02T11:17:37.782Z [INFO] Project config: {
-  "buildTool": {
-    "path": "/opt/homebrew/Cellar/maven/3.9.11/bin",
-    "name": "mvn",
-    "version": "3.9.11"
-  },
-  "jdk": {
-    "path": "/Users/spapatil/.jdk/jdk-11.0.28/jdk-11.0.28+6/Contents/Home/bin",
-    "name": "java",
-    "version": "11"
-  },
-  "name": "spandana-flink",
-  "dir": "/Users/spapatil/Desktop/Officework/spandana-flink"
-}
-2025-12-02T11:17:37.782Z [INFO] Project configuration initialized: {
-  "buildTool": {
-    "path": "/opt/homebrew/Cellar/maven/3.9.11/bin",
-    "name": "mvn",
-    "version": "3.9.11"
-  },
-  "jdk": {
-    "path": "/Users/spapatil/.jdk/jdk-11.0.28/jdk-11.0.28+6/Contents/Home/bin",
-    "name": "java",
-    "version": "11"
-  },
-  "name": "spandana-flink",
-  "dir": "/Users/spapatil/Desktop/Officework/spandana-flink"
-}
-2025-12-02T11:17:37.782Z [INFO] Initializing upgrade goals...
-2025-12-02T11:17:37.785Z [INFO] [Environment] Running command (Java 11): mvn dependency:tree -B
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --------------------< com.spandana:spandana-flink >---------------------
-[INFO] Building Flink Email Counter 0.0.1-SNAPSHOT
-[INFO]   from pom.xml
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- dependency:3.7.0:tree (default-cli) @ spandana-flink ---
-[INFO] com.spandana:spandana-flink:jar:0.0.1-SNAPSHOT
-[INFO] +- org.apache.flink:flink-streaming-java:jar:1.20.3:provided
-[INFO] |  +- org.apache.flink:flink-core:jar:1.20.3:provided
-[INFO] |  |  +- org.apache.flink:flink-core-api:jar:1.20.3:provided
-[INFO] |  |  |  \- org.apache.flink:flink-metrics-core:jar:1.20.3:provided
-[INFO] |  |  +- org.apache.flink:flink-annotations:jar:1.20.3:provided
-[INFO] |  |  +- org.apache.flink:flink-shaded-asm-9:jar:9.5-17.0:provided
-[INFO] |  |  +- org.apache.flink:flink-shaded-jackson:jar:2.14.2-17.0:provided
-[INFO] |  |  +- org.apache.commons:commons-lang3:jar:3.12.0:provided
-[INFO] |  |  +- org.snakeyaml:snakeyaml-engine:jar:2.6:provided
-[INFO] |  |  +- org.apache.commons:commons-text:jar:1.10.0:provided
-[INFO] |  |  +- com.esotericsoftware.kryo:kryo:jar:2.24.0:provided
-[INFO] |  |  |  +- com.esotericsoftware.minlog:minlog:jar:1.2:provided
-[INFO] |  |  |  \- org.objenesis:objenesis:jar:2.1:provided
-[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.2:provided
-[INFO] |  |  \- org.apache.commons:commons-compress:jar:1.26.0:provided
-[INFO] |  +- org.apache.flink:flink-file-sink-common:jar:1.20.3:provided
-[INFO] |  +- org.apache.flink:flink-runtime:jar:1.20.3:provided
-[INFO] |  |  +- org.apache.flink:flink-rpc-core:jar:1.20.3:provided
-[INFO] |  |  +- org.apache.flink:flink-rpc-akka-loader:jar:1.20.3:provided
-[INFO] |  |  +- org.apache.flink:flink-queryable-state-client-java:jar:1.20.3:provided
-[INFO] |  |  +- org.apache.flink:flink-hadoop-fs:jar:1.20.3:provided
-[INFO] |  |  +- commons-io:commons-io:jar:2.15.1:provided
-[INFO] |  |  +- org.apache.flink:flink-shaded-netty:jar:4.1.91.Final-17.0:provided
-[INFO] |  |  +- org.apache.flink:flink-shaded-zookeeper-3:jar:3.7.1-17.0:provided
-[INFO] |  |  +- org.javassist:javassist:jar:3.24.0-GA:provided
-[INFO] |  |  +- org.xerial.snappy:snappy-java:jar:1.1.10.4:provided
-[INFO] |  |  +- tools.profiler:async-profiler:jar:2.9:provided
-[INFO] |  |  \- org.lz4:lz4-java:jar:1.8.0:provided
-[INFO] |  +- org.apache.flink:flink-java:jar:1.20.3:provided
-[INFO] |  |  \- com.twitter:chill-java:jar:0.7.6:provided
-[INFO] |  +- org.apache.flink:flink-shaded-guava:jar:31.1-jre-17.0:provided
-[INFO] |  +- org.apache.commons:commons-math3:jar:3.6.1:provided
-[INFO] |  +- org.apache.flink:flink-connector-datagen:jar:1.20.3:provided
-[INFO] |  +- org.slf4j:slf4j-api:jar:1.7.36:compile
-[INFO] |  \- com.google.code.findbugs:jsr305:jar:1.3.9:compile
-[INFO] +- org.apache.flink:flink-clients:jar:1.20.3:provided
-[INFO] |  +- org.apache.flink:flink-optimizer:jar:1.20.3:provided
-[INFO] |  +- commons-cli:commons-cli:jar:1.5.0:provided
-[INFO] |  \- org.apache.flink:flink-datastream:jar:1.20.3:provided
-[INFO] |     \- org.apache.flink:flink-datastream-api:jar:1.20.3:provided
-[INFO] +- org.apache.flink:flink-connector-elasticsearch8:jar:3.1.0-1.20:compile
-[INFO] |  +- org.apache.flink:flink-connector-base:jar:1.18.0:compile
-[INFO] |  \- co.elastic.clients:elasticsearch-java:jar:8.12.1:compile
-[INFO] |     +- org.elasticsearch.client:elasticsearch-rest-client:jar:8.12.1:compile
-[INFO] |     |  +- org.apache.httpcomponents:httpasyncclient:jar:4.1.5:compile
-[INFO] |     |  +- org.apache.httpcomponents:httpcore-nio:jar:4.4.13:compile
-[INFO] |     |  \- commons-logging:commons-logging:jar:1.2:compile
-[INFO] |     +- jakarta.json:jakarta.json-api:jar:2.0.1:compile
-[INFO] |     +- org.eclipse.parsson:parsson:jar:1.0.5:compile
-[INFO] |     \- io.opentelemetry:opentelemetry-api:jar:1.29.0:runtime
-[INFO] |        \- io.opentelemetry:opentelemetry-context:jar:1.29.0:runtime
-[INFO] +- software.amazon.awssdk:sqs:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:aws-json-protocol:jar:2.25.35:compile
-[INFO] |  |  \- software.amazon.awssdk:third-party-jackson-core:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:protocol-core:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:http-auth-aws:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:sdk-core:jar:2.25.35:compile
-[INFO] |  |  \- org.reactivestreams:reactive-streams:jar:1.0.4:compile
-[INFO] |  +- software.amazon.awssdk:auth:jar:2.25.35:compile
-[INFO] |  |  \- software.amazon.eventstream:eventstream:jar:1.0.1:compile
-[INFO] |  +- software.amazon.awssdk:http-auth-spi:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:http-auth:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:identity-spi:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:http-client-spi:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:regions:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:annotations:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:utils:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:aws-core:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:metrics-spi:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:json-utils:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:endpoints-spi:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:apache-client:jar:2.25.35:runtime
-[INFO] |  |  +- org.apache.httpcomponents:httpclient:jar:4.5.13:compile
-[INFO] |  |  +- org.apache.httpcomponents:httpcore:jar:4.4.13:compile
-[INFO] |  |  \- commons-codec:commons-codec:jar:1.15:compile
-[INFO] |  \- software.amazon.awssdk:netty-nio-client:jar:2.25.35:runtime
-[INFO] |     +- io.netty:netty-codec-http:jar:4.1.108.Final:runtime
-[INFO] |     +- io.netty:netty-codec-http2:jar:4.1.108.Final:runtime
-[INFO] |     +- io.netty:netty-codec:jar:4.1.108.Final:runtime
-[INFO] |     +- io.netty:netty-transport:jar:4.1.108.Final:runtime
-[INFO] |     +- io.netty:netty-common:jar:4.1.108.Final:runtime
-[INFO] |     +- io.netty:netty-buffer:jar:4.1.108.Final:runtime
-[INFO] |     +- io.netty:netty-handler:jar:4.1.108.Final:runtime
-[INFO] |     |  \- io.netty:netty-transport-native-unix-common:jar:4.1.108.Final:runtime
-[INFO] |     +- io.netty:netty-transport-classes-epoll:jar:4.1.108.Final:runtime
-[INFO] |     \- io.netty:netty-resolver:jar:4.1.108.Final:runtime
-[INFO] +- software.amazon.awssdk:s3:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:aws-xml-protocol:jar:2.25.35:compile
-[INFO] |  |  \- software.amazon.awssdk:aws-query-protocol:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:arns:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:profiles:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:crt-core:jar:2.25.35:compile
-[INFO] |  +- software.amazon.awssdk:checksums:jar:2.25.35:compile
-[INFO] |  \- software.amazon.awssdk:checksums-spi:jar:2.25.35:compile
-[INFO] +- com.fasterxml.jackson.core:jackson-databind:jar:2.17.2:compile
-[INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.17.2:compile
-[INFO] |  \- com.fasterxml.jackson.core:jackson-core:jar:2.17.2:compile
-[INFO] +- org.apache.logging.log4j:log4j-slf4j-impl:jar:2.24.3:runtime
-[INFO] +- org.apache.logging.log4j:log4j-api:jar:2.24.3:runtime
-[INFO] +- org.apache.logging.log4j:log4j-core:jar:2.24.3:runtime
-[INFO] +- com.sun.mail:jakarta.mail:jar:2.0.1:compile
-[INFO] |  \- com.sun.activation:jakarta.activation:jar:2.0.1:compile
-[INFO] +- org.yaml:snakeyaml:jar:2.2:compile
-[INFO] \- com.github.luben:zstd-jni:jar:1.5.5-4:compile
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.338 s
-[INFO] Finished at: 2025-12-02T16:47:40+05:30
-[INFO] ------------------------------------------------------------------------
-2025-12-02T11:17:40.511Z [INFO] [MavenBuildTool] Successfully got dependency tree of /Users/spapatil/Desktop/Officework/spandana-flink
-2025-12-02T11:17:40.512Z [INFO] [MavenBuildTool] Getting Java version of /Users/spapatil/Desktop/Officework/spandana-flink from pom.xml
-2025-12-02T11:17:40.512Z [INFO] [MavenBuildTool] Searching for pom.xml files in /Users/spapatil/Desktop/Officework/spandana-flink
-2025-12-02T11:17:40.512Z [INFO] [MavenBuildTool] Getting all module coordinates of /Users/spapatil/Desktop/Officework/spandana-flink
-2025-12-02T11:17:40.512Z [INFO] [MavenBuildTool] Getting effective POMs of /Users/spapatil/Desktop/Officework/spandana-flink
-2025-12-02T11:17:40.513Z [INFO] [Environment] Running command (Java 11): mvn help:effective-pom -Doutput=effective-pom-c27d75ce-7976-4cf2-9096-49ff938e67c7.log
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --------------------< com.spandana:spandana-flink >---------------------
-[INFO] Building Flink Email Counter 0.0.1-SNAPSHOT
-[INFO]   from pom.xml
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- help:3.5.1:effective-pom (default-cli) @ spandana-flink ---
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M3/org.eclipse.sisu.plexus-0.9.0.M3.pom
-Progress (1): 819 BProgress (1): 3.4 kBProgress (1): 6.4 kBProgress (1): 15 kB Progress (1): 17 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M3/org.eclipse.sisu.plexus-0.9.0.M3.pom (17 kB at 49 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/43/maven-shared-components-43.pom
-Progress (1): 809 BProgress (1): 2.3 kBProgress (1): 3.8 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/43/maven-shared-components-43.pom (3.8 kB at 88 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.3/plexus-interactivity-api-1.3.pom
-Progress (1): 1.6 kBProgress (1): 1.7 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.3/plexus-interactivity-api-1.3.pom (1.7 kB at 11 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity/1.3/plexus-interactivity-1.3.pom
-Progress (1): 1.3 kBProgress (1): 1.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity/1.3/plexus-interactivity-1.3.pom (1.9 kB at 9.8 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.20/xstream-1.4.20.pom
-Progress (1): 880 BProgress (1): 4.2 kBProgress (1): 6.2 kBProgress (1): 9.0 kBProgress (1): 13 kB Progress (1): 18 kBProgress (1): 24 kBProgress (1): 25 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.20/xstream-1.4.20.pom (25 kB at 99 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream-parent/1.4.20/xstream-parent-1.4.20.pom
-Progress (1): 811 BProgress (1): 3.2 kBProgress (1): 4.8 kBProgress (1): 9.1 kBProgress (1): 12 kB Progress (1): 16 kBProgress (1): 21 kBProgress (1): 26 kBProgress (1): 29 kBProgress (1): 34 kBProgress (1): 38 kBProgress (1): 40 kBProgress (1): 43 kBProgress (1): 44 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream-parent/1.4.20/xstream-parent-1.4.20.pom (44 kB at 411 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.pom
-Progress (1): 819 BProgress (1): 2.9 kBProgress (1): 5.1 kBProgress (1): 8.9 kBProgress (1): 13 kB Progress (1): 16 kBProgress (1): 21 kBProgress (1): 24 kBProgress (1): 24 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.pom (24 kB at 259 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.pom
-Progress (1): 386 B                   Downloaded from central: https://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.pom (386 B at 3.7 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.13.1/maven-plugin-tools-generators-3.13.1.jar
-Progress (1): 0.9/44 kBProgress (1): 2.3/44 kBProgress (1): 3.6/44 kBProgress (1): 5.0/44 kBProgress (1): 6.4/44 kBProgress (1): 7.7/44 kBProgress (1): 9.1/44 kBProgress (1): 10/44 kB Progress (1): 15/44 kBProgress (1): 19/44 kBProgress (1): 20/44 kBProgress (1): 24/44 kBProgress (1): 29/44 kBProgress (1): 33/44 kBProgress (1): 37/44 kBProgress (1): 41/44 kBProgress (1): 44 kB                      Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.13.1/maven-plugin-tools-generators-3.13.1.jar (44 kB at 599 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M3/org.eclipse.sisu.plexus-0.9.0.M3.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M3/org.eclipse.sisu.inject-0.9.0.M3.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.17.2/jsoup-1.17.2.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/4.0.0/maven-reporting-api-4.0.0.jar
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.3/plexus-interactivity-api-1.3.jar
-Progress (1): 3.8/446 kBProgress (1): 8.0/446 kBProgress (1): 12/446 kB Progress (1): 16/446 kBProgress (1): 21/446 kBProgress (1): 25/446 kBProgress (1): 29/446 kBProgress (1): 33/446 kBProgress (1): 37/446 kBProgress (1): 41/446 kBProgress (1): 46/446 kBProgress (1): 50/446 kBProgress (1): 54/446 kBProgress (1): 58/446 kBProgress (1): 63/446 kBProgress (1): 67/446 kBProgress (1): 71/446 kBProgress (1): 75/446 kBProgress (1): 80/446 kBProgress (1): 84/446 kBProgress (1): 88/446 kBProgress (1): 92/446 kBProgress (1): 96/446 kBProgress (1): 101/446 kBProgress (1): 105/446 kBProgress (1): 109/446 kBProgress (1): 113/446 kBProgress (1): 118/446 kBProgress (1): 122/446 kBProgress (1): 126/446 kBProgress (1): 130/446 kBProgress (1): 147/446 kBProgress (1): 156/446 kBProgress (1): 172/446 kBProgress (1): 188/446 kBProgress (1): 205/446 kBProgress (1): 221/446 kBProgress (1): 238/446 kBProgress (1): 254/446 kBProgress (1): 270/446 kBProgress (1): 287/446 kBProgress (1): 303/446 kBProgress (1): 319/446 kBProgress (1): 336/446 kBProgress (1): 352/446 kBProgress (1): 369/446 kBProgress (1): 385/446 kBProgress (1): 401/446 kBProgress (1): 418/446 kBProgress (1): 434/446 kBProgress (1): 446 kB    Progress (2): 446 kB | 0.9/216 kBProgress (2): 446 kB | 2.3/216 kBProgress (2): 446 kB | 3.6/216 kBProgress (2): 446 kB | 5.0/216 kBProgress (2): 446 kB | 6.4/216 kBProgress (2): 446 kB | 7.7/216 kBProgress (2): 446 kB | 9.1/216 kBProgress (2): 446 kB | 10/216 kB Progress (2): 446 kB | 12/216 kBProgress (2): 446 kB | 13/216 kB                                Downloaded from central: https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.17.2/jsoup-1.17.2.jar (446 kB at 2.1 MB/s)
-Progress (1): 15/216 kB                       Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.20/xstream-1.4.20.jar
-Progress (1): 16/216 kBProgress (1): 17/216 kBProgress (1): 19/216 kBProgress (1): 20/216 kBProgress (1): 21/216 kBProgress (1): 23/216 kBProgress (1): 24/216 kBProgress (1): 25/216 kBProgress (1): 26/216 kBProgress (1): 27/216 kBProgress (1): 29/216 kBProgress (1): 30/216 kBProgress (1): 31/216 kBProgress (1): 33/216 kBProgress (1): 34/216 kBProgress (1): 36/216 kBProgress (1): 37/216 kBProgress (1): 38/216 kBProgress (1): 40/216 kBProgress (1): 41/216 kBProgress (1): 42/216 kBProgress (1): 44/216 kBProgress (1): 45/216 kBProgress (1): 46/216 kBProgress (1): 48/216 kBProgress (1): 49/216 kBProgress (1): 51/216 kBProgress (1): 52/216 kBProgress (1): 53/216 kBProgress (1): 55/216 kBProgress (1): 59/216 kBProgress (1): 63/216 kBProgress (1): 67/216 kBProgress (1): 72/216 kBProgress (1): 76/216 kBProgress (1): 80/216 kBProgress (1): 84/216 kBProgress (1): 89/216 kBProgress (2): 89/216 kB | 0.9/434 kBProgress (2): 89/216 kB | 2.3/434 kBProgress (2): 89/216 kB | 3.6/434 kBProgress (2): 89/216 kB | 5.0/434 kBProgress (2): 89/216 kB | 6.4/434 kBProgress (2): 89/216 kB | 7.7/434 kBProgress (2): 89/216 kB | 9.1/434 kBProgress (2): 89/216 kB | 10/434 kB Progress (2): 89/216 kB | 12/434 kBProgress (2): 89/216 kB | 13/434 kBProgress (2): 89/216 kB | 15/434 kBProgress (2): 89/216 kB | 16/434 kBProgress (2): 89/216 kB | 17/434 kBProgress (2): 89/216 kB | 19/434 kBProgress (2): 89/216 kB | 20/434 kBProgress (2): 93/216 kB | 20/434 kBProgress (2): 97/216 kB | 20/434 kBProgress (2): 101/216 kB | 20/434 kBProgress (2): 105/216 kB | 20/434 kBProgress (2): 105/216 kB | 21/434 kBProgress (2): 105/216 kB | 23/434 kBProgress (2): 105/216 kB | 24/434 kBProgress (2): 105/216 kB | 25/434 kBProgress (2): 105/216 kB | 26/434 kBProgress (2): 105/216 kB | 27/434 kBProgress (2): 105/216 kB | 29/434 kBProgress (2): 105/216 kB | 30/434 kBProgress (2): 105/216 kB | 31/434 kBProgress (2): 105/216 kB | 33/434 kBProgress (3): 105/216 kB | 33/434 kB | 0.9/9.8 kBProgress (3): 105/216 kB | 33/434 kB | 2.3/9.8 kBProgress (3): 105/216 kB | 33/434 kB | 3.6/9.8 kBProgress (3): 105/216 kB | 34/434 kB | 3.6/9.8 kBProgress (3): 105/216 kB | 34/434 kB | 5.0/9.8 kBProgress (3): 105/216 kB | 36/434 kB | 5.0/9.8 kBProgress (3): 105/216 kB | 36/434 kB | 6.4/9.8 kBProgress (3): 105/216 kB | 37/434 kB | 6.4/9.8 kBProgress (3): 105/216 kB | 37/434 kB | 7.7/9.8 kBProgress (3): 105/216 kB | 38/434 kB | 7.7/9.8 kBProgress (3): 105/216 kB | 38/434 kB | 9.1/9.8 kBProgress (3): 105/216 kB | 38/434 kB | 9.8 kB    Progress (3): 105/216 kB | 40/434 kB | 9.8 kBProgress (3): 105/216 kB | 41/434 kB | 9.8 kBProgress (3): 110/216 kB | 41/434 kB | 9.8 kBProgress (3): 114/216 kB | 41/434 kB | 9.8 kBProgress (3): 118/216 kB | 41/434 kB | 9.8 kBProgress (3): 118/216 kB | 42/434 kB | 9.8 kBProgress (3): 122/216 kB | 42/434 kB | 9.8 kBProgress (3): 122/216 kB | 44/434 kB | 9.8 kBProgress (3): 122/216 kB | 45/434 kB | 9.8 kBProgress (3): 127/216 kB | 45/434 kB | 9.8 kB                                             Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/4.0.0/maven-reporting-api-4.0.0.jar (9.8 kB at 44 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar
-Progress (2): 127/216 kB | 46/434 kBProgress (2): 127/216 kB | 48/434 kBProgress (2): 127/216 kB | 49/434 kBProgress (2): 127/216 kB | 51/434 kBProgress (2): 127/216 kB | 52/434 kBProgress (2): 127/216 kB | 53/434 kBProgress (2): 127/216 kB | 55/434 kBProgress (2): 127/216 kB | 59/434 kBProgress (2): 127/216 kB | 63/434 kBProgress (2): 127/216 kB | 67/434 kBProgress (2): 127/216 kB | 72/434 kBProgress (2): 127/216 kB | 76/434 kBProgress (2): 127/216 kB | 80/434 kBProgress (2): 127/216 kB | 84/434 kBProgress (2): 127/216 kB | 89/434 kBProgress (2): 127/216 kB | 93/434 kBProgress (2): 127/216 kB | 97/434 kBProgress (2): 127/216 kB | 101/434 kBProgress (2): 127/216 kB | 105/434 kBProgress (2): 127/216 kB | 110/434 kBProgress (2): 127/216 kB | 114/434 kBProgress (3): 127/216 kB | 114/434 kB | 0.9/10 kBProgress (3): 127/216 kB | 114/434 kB | 2.3/10 kBProgress (3): 127/216 kB | 114/434 kB | 3.6/10 kBProgress (3): 127/216 kB | 114/434 kB | 3.7/10 kBProgress (3): 127/216 kB | 114/434 kB | 5.1/10 kBProgress (3): 127/216 kB | 114/434 kB | 6.5/10 kBProgress (3): 127/216 kB | 114/434 kB | 7.8/10 kBProgress (3): 127/216 kB | 114/434 kB | 9.2/10 kBProgress (3): 127/216 kB | 114/434 kB | 10 kB    Progress (3): 127/216 kB | 118/434 kB | 10 kBProgress (3): 127/216 kB | 122/434 kB | 10 kBProgress (3): 127/216 kB | 127/434 kB | 10 kB                                             Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.3/plexus-interactivity-api-1.3.jar (10 kB at 43 kB/s)
-Downloading from central: https://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar
-Progress (2): 131/216 kB | 127/434 kBProgress (2): 135/216 kB | 127/434 kBProgress (2): 139/216 kB | 127/434 kBProgress (2): 144/216 kB | 127/434 kBProgress (2): 148/216 kB | 127/434 kBProgress (2): 152/216 kB | 127/434 kBProgress (2): 156/216 kB | 127/434 kBProgress (2): 160/216 kB | 127/434 kBProgress (2): 164/216 kB | 127/434 kBProgress (2): 168/216 kB | 127/434 kBProgress (2): 173/216 kB | 127/434 kBProgress (2): 177/216 kB | 127/434 kBProgress (2): 181/216 kB | 127/434 kBProgress (2): 185/216 kB | 127/434 kBProgress (2): 189/216 kB | 127/434 kBProgress (2): 194/216 kB | 127/434 kBProgress (2): 198/216 kB | 127/434 kBProgress (2): 202/216 kB | 127/434 kBProgress (2): 206/216 kB | 127/434 kBProgress (2): 211/216 kB | 127/434 kBProgress (2): 215/216 kB | 127/434 kBProgress (2): 216 kB | 127/434 kB    Progress (2): 216 kB | 131/434 kBProgress (2): 216 kB | 135/434 kB                                 Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M3/org.eclipse.sisu.plexus-0.9.0.M3.jar (216 kB at 678 kB/s)
-Progress (1): 139/434 kBProgress (1): 144/434 kBProgress (1): 148/434 kBProgress (1): 152/434 kBProgress (1): 156/434 kBProgress (1): 160/434 kBProgress (1): 164/434 kBProgress (1): 168/434 kBProgress (1): 173/434 kBProgress (2): 173/434 kB | 7.7/645 kBProgress (2): 173/434 kB | 16/645 kB Progress (2): 173/434 kB | 25/645 kBProgress (2): 173/434 kB | 41/645 kBProgress (2): 173/434 kB | 57/645 kBProgress (2): 173/434 kB | 74/645 kBProgress (2): 173/434 kB | 90/645 kBProgress (2): 173/434 kB | 106/645 kBProgress (2): 177/434 kB | 106/645 kBProgress (2): 181/434 kB | 106/645 kBProgress (2): 185/434 kB | 106/645 kBProgress (2): 189/434 kB | 106/645 kBProgress (2): 194/434 kB | 106/645 kBProgress (2): 194/434 kB | 123/645 kBProgress (2): 198/434 kB | 123/645 kBProgress (2): 202/434 kB | 123/645 kBProgress (2): 206/434 kB | 123/645 kBProgress (2): 211/434 kB | 123/645 kBProgress (2): 215/434 kB | 123/645 kBProgress (2): 219/434 kB | 123/645 kBProgress (2): 223/434 kB | 123/645 kBProgress (2): 223/434 kB | 139/645 kBProgress (2): 223/434 kB | 156/645 kBProgress (2): 223/434 kB | 172/645 kBProgress (2): 223/434 kB | 188/645 kBProgress (2): 223/434 kB | 205/645 kBProgress (2): 223/434 kB | 221/645 kBProgress (2): 240/434 kB | 221/645 kBProgress (2): 256/434 kB | 221/645 kBProgress (3): 256/434 kB | 221/645 kB | 0.9/30 kBProgress (3): 256/434 kB | 221/645 kB | 2.3/30 kBProgress (3): 256/434 kB | 221/645 kB | 3.6/30 kBProgress (3): 256/434 kB | 221/645 kB | 5.0/30 kBProgress (3): 256/434 kB | 221/645 kB | 6.4/30 kBProgress (3): 256/434 kB | 221/645 kB | 7.7/30 kBProgress (3): 256/434 kB | 221/645 kB | 8.2/30 kBProgress (3): 256/434 kB | 221/645 kB | 9.6/30 kBProgress (3): 256/434 kB | 221/645 kB | 11/30 kB Progress (3): 256/434 kB | 221/645 kB | 12/30 kBProgress (3): 256/434 kB | 221/645 kB | 14/30 kBProgress (3): 256/434 kB | 221/645 kB | 15/30 kBProgress (3): 256/434 kB | 221/645 kB | 16/30 kBProgress (3): 256/434 kB | 221/645 kB | 18/30 kBProgress (3): 256/434 kB | 221/645 kB | 19/30 kBProgress (3): 256/434 kB | 221/645 kB | 21/30 kBProgress (3): 256/434 kB | 221/645 kB | 22/30 kBProgress (3): 256/434 kB | 221/645 kB | 23/30 kBProgress (3): 256/434 kB | 221/645 kB | 25/30 kBProgress (3): 256/434 kB | 221/645 kB | 26/30 kBProgress (3): 256/434 kB | 221/645 kB | 27/30 kBProgress (3): 256/434 kB | 221/645 kB | 29/30 kBProgress (3): 256/434 kB | 221/645 kB | 30 kB                                                Downloaded from central: https://repo.maven.apache.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar (30 kB at 74 kB/s)
-Progress (3): 256/434 kB | 221/645 kB | 0.9/7.2 kBProgress (3): 256/434 kB | 221/645 kB | 2.3/7.2 kBProgress (3): 256/434 kB | 221/645 kB | 3.6/7.2 kBProgress (3): 256/434 kB | 221/645 kB | 5.0/7.2 kBProgress (3): 256/434 kB | 221/645 kB | 6.4/7.2 kBProgress (3): 256/434 kB | 221/645 kB | 7.2 kB                                                  Downloaded from central: https://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar (7.2 kB at 16 kB/s)
-Progress (2): 272/434 kB | 221/645 kBProgress (2): 287/434 kB | 221/645 kBProgress (2): 303/434 kB | 221/645 kBProgress (2): 319/434 kB | 221/645 kBProgress (2): 319/434 kB | 238/645 kBProgress (2): 336/434 kB | 238/645 kBProgress (2): 352/434 kB | 238/645 kBProgress (2): 352/434 kB | 254/645 kBProgress (2): 352/434 kB | 270/645 kBProgress (2): 352/434 kB | 287/645 kBProgress (2): 352/434 kB | 303/645 kBProgress (2): 369/434 kB | 303/645 kBProgress (2): 369/434 kB | 319/645 kBProgress (2): 369/434 kB | 336/645 kBProgress (2): 369/434 kB | 352/645 kBProgress (2): 385/434 kB | 352/645 kBProgress (2): 385/434 kB | 369/645 kBProgress (2): 401/434 kB | 369/645 kBProgress (2): 401/434 kB | 385/645 kBProgress (2): 418/434 kB | 385/645 kBProgress (2): 418/434 kB | 401/645 kBProgress (2): 434 kB | 401/645 kB    Progress (2): 434 kB | 418/645 kB                                 Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M3/org.eclipse.sisu.inject-0.9.0.M3.jar (434 kB at 840 kB/s)
-Progress (1): 434/645 kBProgress (1): 451/645 kBProgress (1): 467/645 kBProgress (1): 483/645 kBProgress (1): 500/645 kBProgress (1): 516/645 kBProgress (1): 532/645 kBProgress (1): 549/645 kBProgress (1): 565/645 kBProgress (1): 582/645 kBProgress (1): 598/645 kBProgress (1): 614/645 kBProgress (1): 631/645 kBProgress (1): 645 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.20/xstream-1.4.20.jar (645 kB at 1.1 MB/s)
-[INFO] Effective-POM written to: /Users/spapatil/Desktop/Officework/spandana-flink/effective-pom-c27d75ce-7976-4cf2-9096-49ff938e67c7.log
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.406 s
-[INFO] Finished at: 2025-12-02T16:47:43+05:30
-[INFO] ------------------------------------------------------------------------
-2025-12-02T11:17:43.810Z [INFO] [MavenBuildTool] Found pom.xml files: /Users/spapatil/Desktop/Officework/spandana-flink/pom.xml
-2025-12-02T11:17:43.811Z [INFO] [MavenBuildTool] Java version found in /Users/spapatil/Desktop/Officework/spandana-flink/pom.xml: 11
-2025-12-02T11:17:43.811Z [INFO] Source Java version: 11
-2025-12-02T11:17:43.812Z [INFO] validateAndUpdateTargets, targets: [object Object]
-2025-12-02T11:17:43.812Z [WARN] No source dependencies found for Spring Boot. Skipping target dependency validation
-2025-12-02T11:17:43.812Z [INFO] validateAndUpdateTargets, targets: [object Object], group:Spring Boot
-2025-12-02T11:17:43.812Z [WARN] No source dependencies found for Spring Framework. Skipping target dependency validation
-2025-12-02T11:17:43.812Z [INFO] validateAndUpdateTargets, targets: [object Object], group:Spring Framework
-2025-12-02T11:17:43.813Z [WARN] No source dependencies found for Spring Security. Skipping target dependency validation
-2025-12-02T11:17:43.813Z [INFO] validateAndUpdateTargets, targets: [object Object], group:Spring Security
-2025-12-02T11:17:43.813Z [WARN] No source dependencies found for Jakarta EE. Skipping target dependency validation
-2025-12-02T11:17:43.813Z [INFO] validateAndUpdateTargets, targets: [object Object], group:Jakarta EE
-2025-12-02T11:17:43.813Z [WARN] No source dependencies found for JUnit. Skipping target dependency validation
-2025-12-02T11:17:43.813Z [INFO] validateAndUpdateTargets, targets: [object Object], group:JUnit
-2025-12-02T11:17:43.813Z [INFO] validateAndUpdateTargets, targets: [object Object], group:Java
-2025-12-02T11:17:43.814Z [INFO] validateAndUpdateTargets, userTargets: [object Object]
-2025-12-02T11:17:43.814Z [INFO] initUpgradeGoal, targetDeps: [object Object]
-2025-12-02T11:17:43.814Z [INFO] Upgrade goal initialized: [
-  {
-    "name": "Java",
-    "groupId": "java",
-    "artifactId": "*",
-    "version": "21",
-    "recipes": [
-      {
-        "id": "org.openrewrite.java.migrate.UpgradeToJava21",
-        "name": "Upgrade to Java 21",
-        "description": "Migrate Java 8 to Java 21.",
-        "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava21",
-        "recipeLib": {
-          "groupId": "org.openrewrite.recipe",
-          "artifactId": "rewrite-migrate-java",
-          "version": "2.31.1",
-          "versionForGradle": "2.31.1"
-        }
-      }
-    ],
-    "supportedSources": [
-      {
-        "groupId": "java",
-        "artifactId": "*",
-        "version": ">=8 <21"
-      },
-      {
-        "name": "Java",
-        "groupId": "java",
-        "artifactId": "*",
-        "version": "11",
-        "recipes": [
-          {
-            "id": "org.openrewrite.java.migrate.Java8toJava11",
-            "name": "Upgrade to Java 11",
-            "description": "Migrate Java 8 to Java 11.",
-            "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava11",
-            "recipeLib": {
-              "groupId": "org.openrewrite.recipe",
-              "artifactId": "rewrite-migrate-java",
-              "version": "2.31.1",
-              "versionForGradle": "2.31.1"
-            }
-          }
-        ],
-        "supportedSources": [
-          {
-            "groupId": "java",
-            "artifactId": "*",
-            "version": ">=8 <11"
-          }
-        ],
-        "effects": [
-          {
-            "groupId": "java",
-            "artifactId": "*",
-            "version": "11"
-          }
-        ]
-      },
-      {
-        "name": "Java",
-        "groupId": "java",
-        "artifactId": "*",
-        "version": "17",
-        "recipes": [
-          {
-            "id": "org.openrewrite.java.migrate.UpgradeToJava17",
-            "name": "Upgrade to Java 17",
-            "description": "Migrate Java 8 to Java 17.",
-            "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava17",
-            "recipeLib": {
-              "groupId": "org.openrewrite.recipe",
-              "artifactId": "rewrite-migrate-java",
-              "version": "2.31.1",
-              "versionForGradle": "2.31.1"
-            }
-          }
-        ],
-        "supportedSources": [
-          {
-            "groupId": "java",
-            "artifactId": "*",
-            "version": ">=8 <17"
-          },
-          {
-            "name": "Java",
-            "groupId": "java",
-            "artifactId": "*",
-            "version": "11",
-            "recipes": [
-              {
-                "id": "org.openrewrite.java.migrate.Java8toJava11",
-                "name": "Upgrade to Java 11",
-                "description": "Migrate Java 8 to Java 11.",
-                "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava11",
-                "recipeLib": {
-                  "groupId": "org.openrewrite.recipe",
-                  "artifactId": "rewrite-migrate-java",
-                  "version": "2.31.1",
-                  "versionForGradle": "2.31.1"
-                }
-              }
-            ],
-            "supportedSources": [
-              {
-                "groupId": "java",
-                "artifactId": "*",
-                "version": ">=8 <11"
-              }
-            ],
-            "effects": [
-              {
-                "groupId": "java",
-                "artifactId": "*",
-                "version": "11"
-              }
-            ]
-          }
-        ],
-        "effects": [
-          {
-            "groupId": "java",
-            "artifactId": "*",
-            "version": "17"
-          }
-        ]
-      }
-    ],
-    "effects": [
-      {
-        "groupId": "java",
-        "artifactId": "*",
-        "version": "21"
-      }
-    ]
-  }
-]
-2025-12-02T11:17:43.814Z [INFO] Initializing upgrade options...
-2025-12-02T11:17:43.814Z [INFO] Source Java version: 11
-2025-12-02T11:17:43.815Z [INFO] Source JDK: {"name":"java","path":"/Users/spapatil/.jdk/jdk-11.0.28/jdk-11.0.28+6/Contents/Home/bin","version":"11"}
-2025-12-02T11:17:43.815Z [INFO] Target Java version: 21
-2025-12-02T11:17:43.862Z [INFO] Target JDK: {"name":"java","path":"/Users/spapatil/Library/Java/JavaVirtualMachines/ms-21.0.9/Contents/Home/bin","version":"21.0.9","source":"others"}
-2025-12-02T11:17:43.862Z [INFO] Maven project detected.
-2025-12-02T11:17:43.862Z [INFO] Build tool type: mvn
-2025-12-02T11:17:43.862Z [INFO] Build tool: {"name":"mvn","path":"/opt/homebrew/Cellar/maven/3.9.11/bin","version":""}
-2025-12-02T11:17:43.863Z [INFO] Working branch: appmod/java-upgrade-20251202111647
-2025-12-02T11:17:43.863Z [INFO] Upgrade options initialized: {
-  "target": {
-    "jdk": {
-      "name": "java",
-      "path": "/Users/spapatil/Library/Java/JavaVirtualMachines/ms-21.0.9/Contents/Home/bin",
-      "version": "21.0.9",
-      "source": "others"
-    },
-    "dependencies": [
-      {
-        "name": "Java",
-        "groupId": "java",
-        "artifactId": "*",
-        "version": "21",
-        "recipes": [
-          {
-            "id": "org.openrewrite.java.migrate.UpgradeToJava21",
-            "name": "Upgrade to Java 21",
-            "description": "Migrate Java 8 to Java 21.",
-            "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava21",
-            "recipeLib": {
-              "groupId": "org.openrewrite.recipe",
-              "artifactId": "rewrite-migrate-java",
-              "version": "2.31.1",
-              "versionForGradle": "2.31.1"
-            }
-          }
-        ],
-        "supportedSources": [
-          {
-            "groupId": "java",
-            "artifactId": "*",
-            "version": ">=8 <21"
-          },
-          {
-            "name": "Java",
-            "groupId": "java",
-            "artifactId": "*",
-            "version": "11",
-            "recipes": [
-              {
-                "id": "org.openrewrite.java.migrate.Java8toJava11",
-                "name": "Upgrade to Java 11",
-                "description": "Migrate Java 8 to Java 11.",
-                "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava11",
-                "recipeLib": {
-                  "groupId": "org.openrewrite.recipe",
-                  "artifactId": "rewrite-migrate-java",
-                  "version": "2.31.1",
-                  "versionForGradle": "2.31.1"
-                }
-              }
-            ],
-            "supportedSources": [
-              {
-                "groupId": "java",
-                "artifactId": "*",
-                "version": ">=8 <11"
-              }
-            ],
-            "effects": [
-              {
-                "groupId": "java",
-                "artifactId": "*",
-                "version": "11"
-              }
-            ]
-          },
-          {
-            "name": "Java",
-            "groupId": "java",
-            "artifactId": "*",
-            "version": "17",
-            "recipes": [
-              {
-                "id": "org.openrewrite.java.migrate.UpgradeToJava17",
-                "name": "Upgrade to Java 17",
-                "description": "Migrate Java 8 to Java 17.",
-                "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava17",
-                "recipeLib": {
-                  "groupId": "org.openrewrite.recipe",
-                  "artifactId": "rewrite-migrate-java",
-                  "version": "2.31.1",
-                  "versionForGradle": "2.31.1"
-                }
-              }
-            ],
-            "supportedSources": [
-              {
-                "groupId": "java",
-                "artifactId": "*",
-                "version": ">=8 <17"
-              },
-              {
-                "name": "Java",
-                "groupId": "java",
-                "artifactId": "*",
-                "version": "11",
-                "recipes": [
-                  {
-                    "id": "org.openrewrite.java.migrate.Java8toJava11",
-                    "name": "Upgrade to Java 11",
-                    "description": "Migrate Java 8 to Java 11.",
-                    "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava11",
-                    "recipeLib": {
-                      "groupId": "org.openrewrite.recipe",
-                      "artifactId": "rewrite-migrate-java",
-                      "version": "2.31.1",
-                      "versionForGradle": "2.31.1"
-                    }
-                  }
-                ],
-                "supportedSources": [
-                  {
-                    "groupId": "java",
-                    "artifactId": "*",
-                    "version": ">=8 <11"
-                  }
-                ],
-                "effects": [
-                  {
-                    "groupId": "java",
-                    "artifactId": "*",
-                    "version": "11"
-                  }
-                ]
-              }
-            ],
-            "effects": [
-              {
-                "groupId": "java",
-                "artifactId": "*",
-                "version": "17"
-              }
-            ]
-          }
-        ],
-        "effects": [
-          {
-            "groupId": "java",
-            "artifactId": "*",
-            "version": "21"
-          }
-        ]
-      }
-    ],
-    "buildTool": {
-      "name": "mvn",
-      "path": "/opt/homebrew/Cellar/maven/3.9.11/bin",
-      "version": ""
-    }
-  },
-  "workingBranch": "appmod/java-upgrade-20251202111647",
-  "runTests": true
-}
-2025-12-02T11:17:43.863Z [INFO] Project dependencies loaded: [
-  "org.apache.flink:flink-streaming-java:1.20.3:jar",
-  "org.apache.flink:flink-clients:1.20.3:jar",
-  "org.apache.flink:flink-connector-elasticsearch8:3.1.0-1.20:jar",
-  "software.amazon.awssdk:sqs:2.25.35:jar",
-  "software.amazon.awssdk:s3:2.25.35:jar",
-  "com.fasterxml.jackson.core:jackson-databind:2.17.2:jar",
-  "org.apache.logging.log4j:log4j-slf4j-impl:2.24.3:jar",
-  "org.apache.logging.log4j:log4j-api:2.24.3:jar",
-  "org.apache.logging.log4j:log4j-core:2.24.3:jar",
-  "com.sun.mail:jakarta.mail:2.0.1:jar",
-  "org.yaml:snakeyaml:2.2:jar",
-  "com.github.luben:zstd-jni:1.5.5-4:jar"
-]
-2025-12-02T11:17:43.864Z [INFO] Project modules loaded: [
-  "com.spandana:spandana-flink:0.0.1-SNAPSHOT"
-]
-2025-12-02T11:17:43.864Z [INFO] done initializing context.
-2025-12-02T11:17:43.864Z [INFO] Source dependencies: [
-  {
-    "groupId": "org.apache.flink",
-    "artifactId": "flink-streaming-java",
-    "type": "jar",
-    "version": "1.20.3",
-    "scope": "provided",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "org.apache.flink",
-    "artifactId": "flink-clients",
-    "type": "jar",
-    "version": "1.20.3",
-    "scope": "provided",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "org.apache.flink",
-    "artifactId": "flink-connector-elasticsearch8",
-    "type": "jar",
-    "version": "3.1.0-1.20",
-    "scope": "compile",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "software.amazon.awssdk",
-    "artifactId": "sqs",
-    "type": "jar",
-    "version": "2.25.35",
-    "scope": "compile",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "software.amazon.awssdk",
-    "artifactId": "s3",
-    "type": "jar",
-    "version": "2.25.35",
-    "scope": "compile",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "com.fasterxml.jackson.core",
-    "artifactId": "jackson-databind",
-    "type": "jar",
-    "version": "2.17.2",
-    "scope": "compile",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "org.apache.logging.log4j",
-    "artifactId": "log4j-slf4j-impl",
-    "type": "jar",
-    "version": "2.24.3",
-    "scope": "runtime",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "org.apache.logging.log4j",
-    "artifactId": "log4j-api",
-    "type": "jar",
-    "version": "2.24.3",
-    "scope": "runtime",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "org.apache.logging.log4j",
-    "artifactId": "log4j-core",
-    "type": "jar",
-    "version": "2.24.3",
-    "scope": "runtime",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "com.sun.mail",
-    "artifactId": "jakarta.mail",
-    "type": "jar",
-    "version": "2.0.1",
-    "scope": "compile",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "org.yaml",
-    "artifactId": "snakeyaml",
-    "type": "jar",
-    "version": "2.2",
-    "scope": "compile",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "com.github.luben",
-    "artifactId": "zstd-jni",
-    "type": "jar",
-    "version": "1.5.5-4",
-    "scope": "compile",
-    "module": "spandana-flink"
-  },
-  {
-    "groupId": "java",
-    "artifactId": "*",
-    "version": "11"
-  }
-]
-2025-12-02T11:17:43.864Z [INFO] validateAndUpdateTargets, targets: [object Object]
-2025-12-02T11:17:43.864Z [WARN] No source dependencies found for Spring Boot. Skipping target dependency validation
-2025-12-02T11:17:43.864Z [INFO] validateAndUpdateTargets, targets: [object Object], group:Spring Boot
-2025-12-02T11:17:43.865Z [WARN] No source dependencies found for Spring Framework. Skipping target dependency validation
-2025-12-02T11:17:43.865Z [INFO] validateAndUpdateTargets, targets: [object Object], group:Spring Framework
-2025-12-02T11:17:43.865Z [WARN] No source dependencies found for Spring Security. Skipping target dependency validation
-2025-12-02T11:17:43.865Z [INFO] validateAndUpdateTargets, targets: [object Object], group:Spring Security
-2025-12-02T11:17:43.865Z [WARN] No source dependencies found for Jakarta EE. Skipping target dependency validation
-2025-12-02T11:17:43.865Z [INFO] validateAndUpdateTargets, targets: [object Object], group:Jakarta EE
-2025-12-02T11:17:43.865Z [WARN] No source dependencies found for JUnit. Skipping target dependency validation
-2025-12-02T11:17:43.865Z [INFO] validateAndUpdateTargets, targets: [object Object], group:JUnit
-2025-12-02T11:17:43.865Z [INFO] validateAndUpdateTargets, targets: [object Object], group:Java
-2025-12-02T11:17:43.866Z [INFO] validateAndUpdateTargets, userTargets: [object Object]
-2025-12-02T11:17:43.866Z [INFO] Upgrade route: upgrade `Java` to *21* with oneStepOneFramework=false
-2025-12-02T11:17:43.866Z [INFO] Upgrade route planned: [
-  [
-    {
-      "name": "Java",
-      "groupId": "java",
-      "artifactId": "*",
-      "version": "21",
-      "recipes": [
-        {
-          "id": "org.openrewrite.java.migrate.UpgradeToJava21",
-          "name": "Upgrade to Java 21",
-          "description": "Migrate Java 8 to Java 21.",
-          "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava21",
-          "recipeLib": {
-            "groupId": "org.openrewrite.recipe",
-            "artifactId": "rewrite-migrate-java",
-            "version": "2.31.1",
-            "versionForGradle": "2.31.1"
-          }
-        }
-      ],
-      "supportedSources": [
-        {
-          "groupId": "java",
-          "artifactId": "*",
-          "version": ">=8 <21"
-        },
-        {
-          "name": "Java",
-          "groupId": "java",
-          "artifactId": "*",
-          "version": "11",
-          "recipes": [
-            {
-              "id": "org.openrewrite.java.migrate.Java8toJava11",
-              "name": "Upgrade to Java 11",
-              "description": "Migrate Java 8 to Java 11.",
-              "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava11",
-              "recipeLib": {
-                "groupId": "org.openrewrite.recipe",
-                "artifactId": "rewrite-migrate-java",
-                "version": "2.31.1",
-                "versionForGradle": "2.31.1"
-              }
-            }
-          ],
-          "supportedSources": [
-            {
-              "groupId": "java",
-              "artifactId": "*",
-              "version": ">=8 <11"
-            }
-          ],
-          "effects": [
-            {
-              "groupId": "java",
-              "artifactId": "*",
-              "version": "11"
-            }
-          ]
-        },
-        {
-          "name": "Java",
-          "groupId": "java",
-          "artifactId": "*",
-          "version": "17",
-          "recipes": [
-            {
-              "id": "org.openrewrite.java.migrate.UpgradeToJava17",
-              "name": "Upgrade to Java 17",
-              "description": "Migrate Java 8 to Java 17.",
-              "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava17",
-              "recipeLib": {
-                "groupId": "org.openrewrite.recipe",
-                "artifactId": "rewrite-migrate-java",
-                "version": "2.31.1",
-                "versionForGradle": "2.31.1"
-              }
-            }
-          ],
-          "supportedSources": [
-            {
-              "groupId": "java",
-              "artifactId": "*",
-              "version": ">=8 <17"
-            },
-            {
-              "name": "Java",
-              "groupId": "java",
-              "artifactId": "*",
-              "version": "11",
-              "recipes": [
-                {
-                  "id": "org.openrewrite.java.migrate.Java8toJava11",
-                  "name": "Upgrade to Java 11",
-                  "description": "Migrate Java 8 to Java 11.",
-                  "url": "https://docs.openrewrite.org/recipes/java/migrate/UpgradeToJava11",
-                  "recipeLib": {
-                    "groupId": "org.openrewrite.recipe",
-                    "artifactId": "rewrite-migrate-java",
-                    "version": "2.31.1",
-                    "versionForGradle": "2.31.1"
-                  }
-                }
-              ],
-              "supportedSources": [
-                {
-                  "groupId": "java",
-                  "artifactId": "*",
-                  "version": ">=8 <11"
-                }
-              ],
-              "effects": [
-                {
-                  "groupId": "java",
-                  "artifactId": "*",
-                  "version": "11"
-                }
-              ]
-            }
-          ],
-          "effects": [
-            {
-              "groupId": "java",
-              "artifactId": "*",
-              "version": "17"
-            }
-          ]
-        }
-      ],
-      "effects": [
-        {
-          "groupId": "java",
-          "artifactId": "*",
-          "version": "21"
-        }
-      ]
-    }
-  ]
-]
-2025-12-02T11:17:43.889Z [ERROR] fatal: not a git repository (or any of the parent directories): .git
-
